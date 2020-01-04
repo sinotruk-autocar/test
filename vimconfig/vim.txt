@@ -1,0 +1,18 @@
+syntax on
+set nu
+set showcmd
+set hlsearch
+set incsearch
+set smartcase
+exec "nohlsearch"
+let mapleader = " "
+noremap <LEADER><CR> :nohlsearch<CR>
+noremap n nzz
+noremap N Nzz
+inoremap <C-h> <LEFT>
+inoremap <C-j> <DOWN>
+inoremap <C-k> <UP>
+inoremap <C-l> <RIGHT>
+inoremap < <><LEFT>
+inoremap ( ()<LEFT>
+inoremap { {}<LEFT>
