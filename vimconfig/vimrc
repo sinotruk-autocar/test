@@ -1,0 +1,68 @@
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+syntax on
+set nu
+set showcmd
+set hlsearch
+set incsearch
+set smartcase
+set autoindent
+set tabstop=2
+set autochdir
+set noerrorbells
+set shiftwidth=2
+set autoindent
+set cindent
+exec "nohlsearch"
+let mapleader = " "
+
+noremap <LEADER>r :source $MYVIMRC<CR>
+noremap <LEADER><CR> :nohlsearch<CR>
+noremap n nzz
+noremap N Nzz
+inoremap <C-h> <LEFT>
+inoremap <C-j> <DOWN>
+inoremap <C-k> <UP>
+inoremap <C-l> <RIGHT>
+nnoremap } }zz
+nnoremap { {zz
+noremap <LEADER>s :split<CR>
+noremap <LEADER>v :vsplit<CR>
+nnoremap <up> :res +5<CR>
+nnoremap <down> :res -5<CR>
+nnoremap <left> :vertical resize-5<CR>
+nnoremap <right> :vertical resize+5<CR>
+nnoremap + :tabe 
+nnoremap - :tabc<CR> 
+noremap <LEADER>l :+tabnext<CR>
+noremap <LEADER>h :-tabnext<CR>
+
+"how to install vim plug-in
+"sudo apt install curl
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'preservim/nerdtree'
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'preservim/nerdcommenter'
+
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
+
+"pluged config
+map <tab> :NERDTreeToggle<CR>
